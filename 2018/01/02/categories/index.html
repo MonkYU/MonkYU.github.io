@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="关于物品相似度计算的方法有：  夹角余弦 杰卡德相似系数 相关系数等  例如，所有用户对物品1的评分或者喜好成都表示为$A1=(x{11},x{21},x{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$AM=(x{1m},x{2m},x{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：   方法 公式">
+<meta name="description" content="读书笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python数据分析与挖掘实战—读书笔记">
 <meta property="og:url" content="http://yoursite.com/2018/01/02/categories/index.html">
 <meta property="og:site_name" content="小风">
-<meta property="og:description" content="关于物品相似度计算的方法有：  夹角余弦 杰卡德相似系数 相关系数等  例如，所有用户对物品1的评分或者喜好成都表示为$A1=(x{11},x{21},x{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$AM=(x{1m},x{2m},x{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：   方法 公式">
+<meta property="og:description" content="读书笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-02T08:40:48.726Z">
+<meta property="og:updated_time" content="2018-01-02T08:43:46.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python数据分析与挖掘实战—读书笔记">
-<meta name="twitter:description" content="关于物品相似度计算的方法有：  夹角余弦 杰卡德相似系数 相关系数等  例如，所有用户对物品1的评分或者喜好成都表示为$A1=(x{11},x{21},x{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$AM=(x{1m},x{2m},x{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：   方法 公式">
+<meta name="twitter:description" content="读书笔记">
 
 
 
@@ -352,36 +352,36 @@
       
 
       
-        <a id="more"></a>
-<p>关于物品相似度计算的方法有：</p>
-<ol>
-<li>夹角余弦</li>
-<li>杰卡德相似系数</li>
-<li>相关系数等</li>
-</ol>
-<h5 id="例如，所有用户对物品1的评分或者喜好成都表示为-A1-x-11-x-21-x-31-···x-n1-所有用户对物品M的评分或者喜好成都表示为-AM-x-1m-x-2m-x-3m-···x-nm-其-m-为物品，-n-为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下："><a href="#例如，所有用户对物品1的评分或者喜好成都表示为-A1-x-11-x-21-x-31-···x-n1-所有用户对物品M的评分或者喜好成都表示为-AM-x-1m-x-2m-x-3m-···x-nm-其-m-为物品，-n-为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：" class="headerlink" title="例如，所有用户对物品1的评分或者喜好成都表示为$A1=(x{11},x{21},x{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$AM=(x{1m},x{2m},x{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下："></a>例如，所有用户对物品1的评分或者喜好成都表示为$A<em>1=(x</em>{11},x<em>{21},x</em>{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$A<em>M=(x</em>{1m},x<em>{2m},x</em>{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</h5><table>
+        <p><strong>读书笔记 </strong> <a id="more"></a> 关于物品相似度计算的方法有： 1. 夹角余弦 2. 杰卡德相似系数 3. 相关系数等</p>
+<h5 id="例如所有用户对物品1的评分或者喜好成都表示为a_1x_11x_21x_31x_n1所有用户对物品m的评分或者喜好成都表示为a_mx_1mx_2mx_3mx_nm其m为物品n为用户数可以采用上述几种方法计算两个物品之间的相似度公式如下">例如，所有用户对物品1的评分或者喜好成都表示为<span class="math inline">\(A_1=(x_{11},x_{21},x_{31}···x_{n1})\)</span>,所有用户对物品M的评分或者喜好成都表示为<span class="math inline">\(A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})\)</span>,其<span class="math inline">\(m\)</span>为物品，<span class="math inline">\(n\)</span>为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</h5>
+<table>
+<colgroup>
+<col style="width: 38%">
+<col style="width: 44%">
+<col style="width: 17%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>方法</th>
-<th style="text-align:center">公式</th>
-<th style="text-align:right">说明</th>
+<th style="text-align: center;">公式</th>
+<th style="text-align: right;">说明</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>夹角余弦</td>
-<td style="text-align:center">$\sin<em>{1m}$ = $\sum</em>{k=1}^n  \;x<em>{k1}\;\times\;x</em>{km} \over \sqrt {\sum<em>{k=1}^n\;x</em>{k1}^2}  \sqrt {\sum<em>{k=1}^n\;x</em>{km}^2}$ $\quad \bigl(sin_{1m} = {A_1 \;\cdot\; A_m  \over \vert \;A_1\;\vert \;\times\; \vert\; A_m\;\vert}\bigr)$</td>
-<td style="text-align:right">取之范围为[-1,1],当余弦值接近 $\pm1$,表明两个向量有较强的相似性。当余弦值为0时，表示不相关</td>
+<td style="text-align: center;"><span class="math inline">\(\sin_{1m}\)</span> = <span class="math inline">\(\sum_{k=1}^n \;x_{k1}\;\times\;x_{km} \over \sqrt {\sum_{k=1}^n\;x_{k1}^2} \sqrt {\sum_{k=1}^n\;x_{km}^2}\)</span> <span class="math inline">\(\quad \bigl(sin_{1m} = {A_1 \;\cdot\; A_m \over \vert \;A_1\;\vert \;\times\; \vert\; A_m\;\vert}\bigr)\)</span></td>
+<td style="text-align: right;">取之范围为[-1,1],当余弦值接近 <span class="math inline">\(\pm1\)</span>,表明两个向量有较强的相似性。当余弦值为0时，表示不相关</td>
 </tr>
-<tr>
+<tr class="even">
 <td>杰卡德相似系数</td>
-<td style="text-align:center">$J( A_1\;,\;A_M) ={\vert\; A_1\; \bigcap \;A_M\;\vert \over \vert\; A_1 \;\bigcup \;A_M\; \vert}$</td>
-<td style="text-align:right">分母$A_1 \bigcup A_M$ 表示喜欢物品1与喜欢物品M的用户总数，分子$A_1 \bigcap A_M 表示同时喜欢物品1和物品M的用户数$</td>
+<td style="text-align: center;"><span class="math inline">\(J( A_1\;,\;A_M) ={\vert\; A_1\; \bigcap \;A_M\;\vert \over \vert\; A_1 \;\bigcup \;A_M\; \vert}\)</span></td>
+<td style="text-align: right;">分母<span class="math inline">\(A_1 \bigcup A_M\)</span> 表示喜欢物品1与喜欢物品M的用户总数，分子<span class="math inline">\(A_1 \bigcap A_M 表示同时喜欢物品1和物品M的用户数\)</span></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>相关系数</td>
-<td style="text-align:center">$sin<em>{1m} ={\sum</em>{k=1}^n\;(\;x_{k1}\; - \;\overline {A<em>1}\;)  (\;x</em>{km}\; -\; \overline {A<em>M}\;) \over \sqrt {\sum</em>{k=1}^n\;(\;x_{k1}\; -\; \overline {A<em>1}\;)^2}  \sqrt {\sum</em>{k=1}^n\;(\;x_{km}\; - \;\overline {A_M}\;)^2}}$</td>
-<td style="text-align:right">相关系数的取值范围是[-1,1]。相关系数的绝对值越大，则表明两者相关度越高</td>
+<td style="text-align: center;"><span class="math inline">\(sin_{1m} ={\sum_{k=1}^n\;(\;x_{k1}\; - \;\overline {A_1}\;) (\;x_{km}\; -\; \overline {A_M}\;) \over \sqrt {\sum_{k=1}^n\;(\;x_{k1}\; -\; \overline {A_1}\;)^2} \sqrt {\sum_{k=1}^n\;(\;x_{km}\; - \;\overline {A_M}\;)^2}}\)</span></td>
+<td style="text-align: right;">相关系数的取值范围是[-1,1]。相关系数的绝对值越大，则表明两者相关度越高</td>
 </tr>
 </tbody>
 </table>
@@ -540,7 +540,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如，所有用户对物品1的评分或者喜好成都表示为-A1-x-11-x-21-x-31-···x-n1-所有用户对物品M的评分或者喜好成都表示为-AM-x-1m-x-2m-x-3m-···x-nm-其-m-为物品，-n-为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下："><span class="nav-number">1.</span> <span class="nav-text">例如，所有用户对物品1的评分或者喜好成都表示为$A1=(x{11},x{21},x{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$AM=(x{1m},x{2m},x{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如所有用户对物品1的评分或者喜好成都表示为a_1x_11x_21x_31x_n1所有用户对物品m的评分或者喜好成都表示为a_mx_1mx_2mx_3mx_nm其m为物品n为用户数可以采用上述几种方法计算两个物品之间的相似度公式如下"><span class="nav-number">1.</span> <span class="nav-text">例如，所有用户对物品1的评分或者喜好成都表示为\(A_1=(x_{11},x_{21},x_{31}···x_{n1})\),所有用户对物品M的评分或者喜好成都表示为\(A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})\),其\(m\)为物品，\(n\)为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</span></a></li></ol></div>
             
 
           </div>
