@@ -355,14 +355,48 @@
 
       
         
-          <p><strong>读书笔记 </strong>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/02/categories/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <a id="more"></a>
+<h2 id="关于物品相似度计算的方法有">关于物品相似度计算的方法有：</h2>
+<ol type="1">
+<li>夹角余弦</li>
+<li>杰卡德相似系数</li>
+<li>相关系数等</li>
+</ol>
+<h5 id="例如所有用户对物品1的评分或者喜好成都表示为a_1x_11x_21x_31x_n1所有用户对物品m的评分或者喜好成都表示为a_mx_1mx_2mx_3mx_nm其m为物品n为用户数可以采用上述几种方法计算两个物品之间的相似度公式如下">例如，所有用户对物品1的评分或者喜好成都表示为<span class="math inline">\(A_1=(x_{11},x_{21},x_{31}···x_{n1})\)</span>,所有用户对物品M的评分或者喜好成都表示为<span class="math inline">\(A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})\)</span>,其<span class="math inline">\(m\)</span>为物品，<span class="math inline">\(n\)</span>为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</h5>
+<table>
+<colgroup>
+<col style="width: 38%">
+<col style="width: 44%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>方法</th>
+<th style="text-align: center;">公式</th>
+<th style="text-align: right;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>夹角余弦</td>
+<td style="text-align: center;"><span class="math inline">\(\sin_{1m}\)</span> = <span class="math inline">\(\sum_{k=1}^n \;x_{k1}\;\times\;x_{km} \over \sqrt {\sum_{k=1}^n\;x_{k1}^2} \sqrt {\sum_{k=1}^n\;x_{km}^2}\)</span> <span class="math inline">\(\quad \bigl(sin_{1m} = {A_1 \;\cdot\; A_m \over \vert \;A_1\;\vert \;\times\; \vert\; A_m\;\vert}\bigr)\)</span></td>
+<td style="text-align: right;">取之范围为[-1,1],当余弦值接近 <span class="math inline">\(\pm1\)</span>,表明两个向量有较强的相似性。当余弦值为0时，表示不相关</td>
+</tr>
+<tr class="even">
+<td>杰卡德相似系数</td>
+<td style="text-align: center;"><span class="math inline">\(J( A_1\;,\;A_M) ={\vert\; A_1\; \bigcap \;A_M\;\vert \over \vert\; A_1 \;\bigcup \;A_M\; \vert}\)</span></td>
+<td style="text-align: right;">分母<span class="math inline">\(A_1 \bigcup A_M\)</span> 表示喜欢物品1与喜欢物品M的用户总数，分子<span class="math inline">\(A_1 \bigcap A_M\)</span> 表示同时喜欢物品1和物品M的用户数</td>
+</tr>
+<tr class="odd">
+<td>相关系数</td>
+<td style="text-align: center;"><span class="math inline">\(sin_{1m} ={\sum_{k=1}^n\;(\;x_{k1}\; - \;\overline {A_1}\;) (\;x_{km}\; -\; \overline {A_M}\;) \over \sqrt {\sum_{k=1}^n\;(\;x_{k1}\; -\; \overline {A_1}\;)^2} \sqrt {\sum_{k=1}^n\;(\;x_{km}\; - \;\overline {A_M}\;)^2}}\)</span></td>
+<td style="text-align: right;">相关系数的取值范围是[-1,1]。相关系数的绝对值越大，则表明两者相关度越高</td>
+</tr>
+</tbody>
+</table>
+
+          
         
       
     </div>
