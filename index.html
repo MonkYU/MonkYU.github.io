@@ -355,48 +355,76 @@
 
       
         
-          
-            <a id="more"></a>
-<h2 id="关于物品相似度计算的方法有">关于物品相似度计算的方法有：</h2>
-<ol type="1">
-<li>夹角余弦</li>
-<li>杰卡德相似系数</li>
-<li>相关系数等</li>
-</ol>
-<h5 id="例如所有用户对物品1的评分或者喜好成都表示为a_1x_11x_21x_31x_n1所有用户对物品m的评分或者喜好成都表示为a_mx_1mx_2mx_3mx_nm其m为物品n为用户数可以采用上述几种方法计算两个物品之间的相似度公式如下">例如，所有用户对物品1的评分或者喜好成都表示为<span class="math inline">\(A_1=(x_{11},x_{21},x_{31}···x_{n1})\)</span>,所有用户对物品M的评分或者喜好成都表示为<span class="math inline">\(A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})\)</span>,其<span class="math inline">\(m\)</span>为物品，<span class="math inline">\(n\)</span>为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</h5>
+          <h4 id="灰色预测法">灰色预测法</h4>
+<blockquote>
+<ul>
+<li><pre><code>灰色预测法是一种对含有不确定因素的系统进行预测的方法。灰色系统是介于白色系统和黑色系统之间的一种系统。</code></pre></li>
+<li><pre><code>白色系统是指一个系统的内部特征是完全已知的，即系统的信息是完全充分的。而黑色系统是指一个系统的内部信息对外界来说是一无所知的，只能通过它与外界的联系来加以观测研究。灰色系统内的一部分信息是已知的，另一部分信息时未知的，系统内各因素间具有不确定的关系。</code></pre></li>
+<li><pre><code>灰色预测通过鉴别系统因素之间发展趋势的相异程度，即进行关联分析，并对原始数据进行生成处理来寻找系统变动的规律，生成有较强规律性的数据序列，然后建立相应的微分方程模型，从而预测事物未来发展趋势的状况。其用等时距观测到的反应预测对象特征的一系列数量值构造灰色预测模型，预测未来某一时刻的特征量，或达到某一特征量的时间。</code></pre></li>
+</ul>
+</blockquote>
+<h4 id="后验差检验判别参照表">后验差检验判别参照表</h4>
+<blockquote>
+<p>原始数据列的均值 <span class="math inline">\({\overline X}\)</span> = <span class="math inline">\({1 \over N}\sum_{k=1}^Nx^{k}\)</span></p>
+</blockquote>
+<blockquote>
+<p>原始数据列的方差 <span class="math inline">\(S_{1}\)</span> = <span class="math inline">\({1 \over N}\sum_{k=1}^N\bigl(x_{(k)} - \overline X\bigr)^2\)</span></p>
+</blockquote>
+<blockquote>
+<p>残差：实际观察值与拟合值之间的差 残差的均值 <span class="math inline">\(\overline \varepsilon = {1 \over N}\sum_{k=1}^N{\varepsilon_{k}}\)</span></p>
+</blockquote>
+<blockquote>
+<p>残差方差 <span class="math inline">\(S_2 = {1 \over N}\sum_{k=1}^N\bigl(\varepsilon_{k} - \overline \varepsilon\bigr)^2\)</span></p>
+</blockquote>
+<blockquote>
+<p>后验差比值 <span class="math inline">\(C = {S_2 \over S_1}\)</span></p>
+</blockquote>
+<blockquote>
+<p>小误差概率 <span class="math inline">\(P = \{|\varepsilon_{k} - \overline \varepsilon| &lt; 0.6745\,S_1\}\)</span></p>
+</blockquote>
 <table>
-<colgroup>
-<col style="width: 38%">
-<col style="width: 44%">
-<col style="width: 17%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>方法</th>
-<th style="text-align: center;">公式</th>
-<th style="text-align: right;">说明</th>
+<th>P</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: right;">模型精度</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>夹角余弦</td>
-<td style="text-align: center;"><span class="math inline">\(\sin_{1m}\)</span> = <span class="math inline">\(\sum_{k=1}^n \;x_{k1}\;\times\;x_{km} \over \sqrt {\sum_{k=1}^n\;x_{k1}^2} \sqrt {\sum_{k=1}^n\;x_{km}^2}\)</span> <span class="math inline">\(\quad \bigl(sin_{1m} = {A_1 \;\cdot\; A_m \over \vert \;A_1\;\vert \;\times\; \vert\; A_m\;\vert}\bigr)\)</span></td>
-<td style="text-align: right;">取之范围为[-1,1],当余弦值接近 <span class="math inline">\(\pm1\)</span>,表明两个向量有较强的相似性。当余弦值为0时，表示不相关</td>
+<td>&gt;0.95</td>
+<td style="text-align: center;">&lt;0.35</td>
+<td style="text-align: right;">好</td>
 </tr>
 <tr class="even">
-<td>杰卡德相似系数</td>
-<td style="text-align: center;"><span class="math inline">\(J( A_1\;,\;A_M) ={\vert\; A_1\; \bigcap \;A_M\;\vert \over \vert\; A_1 \;\bigcup \;A_M\; \vert}\)</span></td>
-<td style="text-align: right;">分母<span class="math inline">\(A_1 \bigcup A_M\)</span> 表示喜欢物品1与喜欢物品M的用户总数，分子<span class="math inline">\(A_1 \bigcap A_M\)</span> 表示同时喜欢物品1和物品M的用户数</td>
+<td>&gt;0.80</td>
+<td style="text-align: center;">&lt;0.50</td>
+<td style="text-align: right;">合格</td>
 </tr>
 <tr class="odd">
-<td>相关系数</td>
-<td style="text-align: center;"><span class="math inline">\(sin_{1m} ={\sum_{k=1}^n\;(\;x_{k1}\; - \;\overline {A_1}\;) (\;x_{km}\; -\; \overline {A_M}\;) \over \sqrt {\sum_{k=1}^n\;(\;x_{k1}\; -\; \overline {A_1}\;)^2} \sqrt {\sum_{k=1}^n\;(\;x_{km}\; - \;\overline {A_M}\;)^2}}\)</span></td>
-<td style="text-align: right;">相关系数的取值范围是[-1,1]。相关系数的绝对值越大，则表明两者相关度越高</td>
+<td>&gt;0.70</td>
+<td style="text-align: center;">&lt;0.65</td>
+<td style="text-align: right;">勉强合格</td>
+</tr>
+<tr class="even">
+<td>&lt;0.70</td>
+<td style="text-align: center;">&gt;0.65</td>
+<td style="text-align: right;">不合格</td>
 </tr>
 </tbody>
 </table>
-
-          
+<h4 id="关于物品相似度计算的方法有">关于物品相似度计算的方法有：</h4>
+<ol type="1">
+<li>夹角余弦</li>
+<li>杰卡德相似系数</li>
+<li>相关系数等
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/02/categories/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
