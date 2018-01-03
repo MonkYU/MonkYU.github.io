@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="聚类分析算法评价$purity$评价法,只需计算正确聚类数占总数的比例。$purity(X,Y) = {1\over n} {\sum_k}max|x_k \;\bigcup\; y_i|$。其中，$x=(x_1,x_2,x_3,···x_k)$是聚类的集合。$x_k$表示第k个聚类的集合。$y=(y_1,y_2,y_3,···y_k)$表示需要被聚类的集合，$y_i$表示第i个聚类对象。n表示被">
+<meta name="description" content="Apriori算法  经典的挖掘频繁项集的算法,进行关联规则提取，通过连接产生后选项与其支持度，然后通过剪枝生成频繁项集  $Support(A \Rightarrow B) =A,B同时发生的事务个数 \over 所有事务个数$=$Support\_count(A \;\bigcap\; B) \over Total\_count(A)$   $Confidence(A \Rightarrow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python数据分析与挖掘实战—读书笔记">
 <meta property="og:url" content="http://yoursite.com/2018/01/02/categories/index.html">
 <meta property="og:site_name" content="小风">
-<meta property="og:description" content="聚类分析算法评价$purity$评价法,只需计算正确聚类数占总数的比例。$purity(X,Y) = {1\over n} {\sum_k}max|x_k \;\bigcup\; y_i|$。其中，$x=(x_1,x_2,x_3,···x_k)$是聚类的集合。$x_k$表示第k个聚类的集合。$y=(y_1,y_2,y_3,···y_k)$表示需要被聚类的集合，$y_i$表示第i个聚类对象。n表示被">
+<meta property="og:description" content="Apriori算法  经典的挖掘频繁项集的算法,进行关联规则提取，通过连接产生后选项与其支持度，然后通过剪枝生成频繁项集  $Support(A \Rightarrow B) =A,B同时发生的事务个数 \over 所有事务个数$=$Support\_count(A \;\bigcap\; B) \over Total\_count(A)$   $Confidence(A \Rightarrow">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-03T09:47:57.862Z">
+<meta property="og:updated_time" content="2018-01-03T11:32:04.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python数据分析与挖掘实战—读书笔记">
-<meta name="twitter:description" content="聚类分析算法评价$purity$评价法,只需计算正确聚类数占总数的比例。$purity(X,Y) = {1\over n} {\sum_k}max|x_k \;\bigcup\; y_i|$。其中，$x=(x_1,x_2,x_3,···x_k)$是聚类的集合。$x_k$表示第k个聚类的集合。$y=(y_1,y_2,y_3,···y_k)$表示需要被聚类的集合，$y_i$表示第i个聚类对象。n表示被">
+<meta name="twitter:description" content="Apriori算法  经典的挖掘频繁项集的算法,进行关联规则提取，通过连接产生后选项与其支持度，然后通过剪枝生成频繁项集  $Support(A \Rightarrow B) =A,B同时发生的事务个数 \over 所有事务个数$=$Support\_count(A \;\bigcap\; B) \over Total\_count(A)$   $Confidence(A \Rightarrow">
 
 
 
@@ -352,9 +352,16 @@
       
 
       
-        <h4 id="聚类分析算法评价"><a href="#聚类分析算法评价" class="headerlink" title="聚类分析算法评价"></a>聚类分析算法评价</h4><p>$purity$评价法,只需计算正确聚类数占总数的比例。$purity(X,Y) = {1\over n} {\sum_k}max|x_k \;\bigcup\; y_i|$。其中，$x=(x_1,x_2,x_3,···x_k)$是聚类的集合。$x_k$表示第k个聚类的集合。$y=(y_1,y_2,y_3,···y_k)$表示需要被聚类的集合，$y_i$表示第i个聚类对象。n表示被聚类集合对象的总数。</p>
-<p>$RI$评价法,这是一种用排列组合原理来对聚类进行评价的手段，RI评价公式如下$RI ={R + W \over R + M + D + W}$其中，$R$是指被聚在一类的两个对象被正确分类了，$W$是指不应该被聚在一类的两个对象被正确分开了，$M$指不应该放在一类的对象被错误的放在了一类，$D$指不应该分开的对象被错误的分开了。</p>
-<p>$F$值评价法,这是基于上述RI方法衍生出的一个方法，F评价公式如下。$F_\alpha={(1+\alpha^2)pr \over \alpha^2p + r}$其中，$p={R \over R + M},$ $r={R \over R + D}$实际上，$RI$方法就是把准确率$p$和召回率$r$看得同等重要，事实上，若需要某一特性多一点，就适合使用F值方法。</p>
+        <h4 id="Apriori算法"><a href="#Apriori算法" class="headerlink" title="Apriori算法"></a>Apriori算法</h4><p>  经典的挖掘频繁项集的算法,进行关联规则提取，通过连接产生后选项与其支持度，然后通过剪枝生成频繁项集</p>
+<blockquote>
+<p>$Support(A \Rightarrow B) =<script type="math/tex">A,B同时发生的事务个数 \over 所有事务个数$=$Support\_count(A \;\bigcap\; B) \over Total\_count(A)$
+  $Confidence(A \Rightarrow B)=</script>Support(A \;\bigcap \; B) \over Support(A)=$$Support_count(A\;\bigcap\;B) \over Support_count(A)$</p>
+</blockquote>
+<h4 id="聚类分析算法评价"><a href="#聚类分析算法评价" class="headerlink" title="聚类分析算法评价"></a>聚类分析算法评价</h4><ul>
+<li>$purity$评价法,只需计算正确聚类数占总数的比例。$purity(X,Y) = {1\over n} {\sum_k}max|x_k \;\bigcup\; y_i|$。其中，$x=(x_1,x_2,x_3,···x_k)$是聚类的集合。$x_k$表示第k个聚类的集合。$y=(y_1,y_2,y_3,···y_k)$表示需要被聚类的集合，$y_i$表示第i个聚类对象。n表示被聚类集合对象的总数。</li>
+<li>$RI$评价法,这是一种用排列组合原理来对聚类进行评价的手段，RI评价公式如下$RI ={R + W \over R + M + D + W}$其中，$R$是指被聚在一类的两个对象被正确分类了，$W$是指不应该被聚在一类的两个对象被正确分开了，$M$指不应该放在一类的对象被错误的放在了一类，$D$指不应该分开的对象被错误的分开了。</li>
+<li>$F$值评价法,这是基于上述RI方法衍生出的一个方法，F评价公式如下。$F_\alpha={(1+\alpha^2)pr \over \alpha^2p + r}$其中，$p={R \over R + M},$ $r={R \over R + D}$实际上，$RI$方法就是把准确率$p$和召回率$r$看得同等重要，事实上，若需要某一特性多一点，就适合使用F值方法。</li>
+</ul>
 <h6 id="灰色预测法是一种对含有不确定因素的系统进行预测的方法。"><a href="#灰色预测法是一种对含有不确定因素的系统进行预测的方法。" class="headerlink" title="灰色预测法是一种对含有不确定因素的系统进行预测的方法。"></a>灰色预测法是一种对含有不确定因素的系统进行预测的方法。</h6><ul>
 <li>白色系统是指一个系统的内部特征是完全已知的，即系统的信息是完全充分的。</li>
 <li>而黑色系统是指一个系统的内部信息对外界来说是一无所知的，只能通过它与外界的联系来加以观测研究。</li>
@@ -424,7 +431,7 @@ table th:first-of-type {
 }
 
 table th:th:nth-of-type(3) {
-    width: 100px;
+    width: 80px;
 }
 
 </style>
@@ -596,7 +603,7 @@ table th:th:nth-of-type(3) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#聚类分析算法评价"><span class="nav-number">1.</span> <span class="nav-text">聚类分析算法评价</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#灰色预测法是一种对含有不确定因素的系统进行预测的方法。"><span class="nav-number">1.0.1.</span> <span class="nav-text">灰色预测法是一种对含有不确定因素的系统进行预测的方法。</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Apriori算法"><span class="nav-number">1.</span> <span class="nav-text">Apriori算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#聚类分析算法评价"><span class="nav-number">2.</span> <span class="nav-text">聚类分析算法评价</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#灰色预测法是一种对含有不确定因素的系统进行预测的方法。"><span class="nav-number">2.0.1.</span> <span class="nav-text">灰色预测法是一种对含有不确定因素的系统进行预测的方法。</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
