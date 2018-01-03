@@ -367,6 +367,7 @@
 <li>后验差比值 $C = {S_2 \over S_1}$</li>
 <li>小误差概率 $P = {|\varepsilon_{k} - \overline \varepsilon| &lt; 0.6745\,S_1}$</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -403,12 +404,14 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="关于物品相似度计算的方法有："><a href="#关于物品相似度计算的方法有：" class="headerlink" title="关于物品相似度计算的方法有："></a>关于物品相似度计算的方法有：</h4><ol>
 <li>夹角余弦</li>
 <li>杰卡德相似系数</li>
 <li>相关系数等</li>
 </ol>
-<h5 id="例如，所有用户对物品1的评分或者喜好成都表示为-A1-x-11-x-21-x-31-···x-n1-所有用户对物品M的评分或者喜好成都表示为-AM-x-1m-x-2m-x-3m-···x-nm-其-m-为物品，-n-为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下："><a href="#例如，所有用户对物品1的评分或者喜好成都表示为-A1-x-11-x-21-x-31-···x-n1-所有用户对物品M的评分或者喜好成都表示为-AM-x-1m-x-2m-x-3m-···x-nm-其-m-为物品，-n-为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：" class="headerlink" title="例如，所有用户对物品1的评分或者喜好成都表示为$A1=(x{11},x{21},x{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$AM=(x{1m},x{2m},x{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下："></a>例如，所有用户对物品1的评分或者喜好成都表示为$A<em>1=(x</em>{11},x<em>{21},x</em>{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$A<em>M=(x</em>{1m},x<em>{2m},x</em>{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</h5><table>
+<h5 id="例如，所有用户对物品1的评分或者喜好成都表示为-A1-x-11-x-21-x-31-···x-n1-所有用户对物品M的评分或者喜好成都表示为-A-M-x-1m-x-2m-x-3m-···x-nm-其-m-为物品，-n-为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下："><a href="#例如，所有用户对物品1的评分或者喜好成都表示为-A1-x-11-x-21-x-31-···x-n1-所有用户对物品M的评分或者喜好成都表示为-A-M-x-1m-x-2m-x-3m-···x-nm-其-m-为物品，-n-为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：" class="headerlink" title="例如，所有用户对物品1的评分或者喜好成都表示为$A1=(x{11},x{21},x{31}···x{n1})$,所有用户对物品M的评分或者喜好成都表示为$A_M=(x{1m},x{2m},x{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下："></a>例如，所有用户对物品1的评分或者喜好成都表示为$A<em>1=(x</em>{11},x<em>{21},x</em>{31}···x<em>{n1})$,所有用户对物品M的评分或者喜好成都表示为$A_M=(x</em>{1m},x<em>{2m},x</em>{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</h5><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>方法</th>
@@ -429,11 +432,12 @@
 </tr>
 <tr>
 <td>相关系数</td>
-<td style="text-align:center">$sin<em>{1m} ={\sum</em>{k=1}^n\;(\;x_{k1}\; - \;\overline {A<em>1}\;)  (\;x</em>{km}\; -\; \overline {A<em>M}\;) \over \sqrt {\sum</em>{k=1}^n\;(\;x_{k1}\; -\; \overline {A<em>1}\;)^2}  \sqrt {\sum</em>{k=1}^n\;(\;x_{km}\; - \;\overline {A_M}\;)^2}}$</td>
+<td style="text-align:center">$sin<em>{1m} ={\sum</em>{k=1}^n\;(\;x<em>{k1}\; - \;\overline {A_1}\;)  (\;x</em>{km}\; -\; \overline {A<em>M}\;) \over \sqrt {\sum</em>{k=1}^n\;(\;x<em>{k1}\; -\; \overline {A_1}\;)^2}  \sqrt {\sum</em>{k=1}^n\;(\;x_{km}\; - \;\overline {A_M}\;)^2}}$</td>
 <td style="text-align:right">相关系数的取值范围是[-1,1]。相关系数的绝对值越大，则表明两者相关度越高</td>
 </tr>
 </tbody>
 </table>
+</div>
 
       
     </div>
@@ -589,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#灰色预测法"><span class="nav-number">1.</span> <span class="nav-text">灰色预测法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后验差检验判别参照表"><span class="nav-number">2.</span> <span class="nav-text">后验差检验判别参照表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于物品相似度计算的方法有："><span class="nav-number">3.</span> <span class="nav-text">关于物品相似度计算的方法有：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如，所有用户对物品1的评分或者喜好成都表示为-A1-x-11-x-21-x-31-···x-n1-所有用户对物品M的评分或者喜好成都表示为-AM-x-1m-x-2m-x-3m-···x-nm-其-m-为物品，-n-为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下："><span class="nav-number">3.1.</span> <span class="nav-text">例如，所有用户对物品1的评分或者喜好成都表示为$A1=(x{11},x{21},x{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$AM=(x{1m},x{2m},x{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#灰色预测法"><span class="nav-number">1.</span> <span class="nav-text">灰色预测法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后验差检验判别参照表"><span class="nav-number">2.</span> <span class="nav-text">后验差检验判别参照表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于物品相似度计算的方法有："><span class="nav-number">3.</span> <span class="nav-text">关于物品相似度计算的方法有：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如，所有用户对物品1的评分或者喜好成都表示为-A1-x-11-x-21-x-31-···x-n1-所有用户对物品M的评分或者喜好成都表示为-A-M-x-1m-x-2m-x-3m-···x-nm-其-m-为物品，-n-为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下："><span class="nav-number">3.1.</span> <span class="nav-text">例如，所有用户对物品1的评分或者喜好成都表示为$A1=(x{11},x{21},x{31}···x{n1})$,所有用户对物品M的评分或者喜好成都表示为$A_M=(x{1m},x{2m},x{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</span></a></li></ol></li></ol></div>
             
 
           </div>
