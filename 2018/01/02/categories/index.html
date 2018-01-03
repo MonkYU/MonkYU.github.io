@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="方法 公式 说明     夹角余弦 $\sin{1m}$ = $\sum{k=1}^n  \;x{k1}\;\times\;x{km} \over \sqrt {\sum{k=1}^n\;x{k1}^2}  \sqrt {\sum{k=1}^n\;x{km}^2}$ $\quad \bigl(sin_{1m} = {A_1 \;\cdot\; A_m  \over \vert \;A_1\">
+<meta name="description" content="例如，所有用户对物品1的评分或者喜好成都表示为$A_1=(x_{11},x_{21},x_{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：     方法 公式 说明     夹角余弦 $\sin_{1m}$ =">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python数据分析与挖掘实战—读书笔记">
 <meta property="og:url" content="http://yoursite.com/2018/01/02/categories/index.html">
 <meta property="og:site_name" content="小风">
-<meta property="og:description" content="方法 公式 说明     夹角余弦 $\sin{1m}$ = $\sum{k=1}^n  \;x{k1}\;\times\;x{km} \over \sqrt {\sum{k=1}^n\;x{k1}^2}  \sqrt {\sum{k=1}^n\;x{km}^2}$ $\quad \bigl(sin_{1m} = {A_1 \;\cdot\; A_m  \over \vert \;A_1\">
+<meta property="og:description" content="例如，所有用户对物品1的评分或者喜好成都表示为$A_1=(x_{11},x_{21},x_{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：     方法 公式 说明     夹角余弦 $\sin_{1m}$ =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-03T08:59:50.445Z">
+<meta property="og:updated_time" content="2018-01-03T09:11:19.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python数据分析与挖掘实战—读书笔记">
-<meta name="twitter:description" content="方法 公式 说明     夹角余弦 $\sin{1m}$ = $\sum{k=1}^n  \;x{k1}\;\times\;x{km} \over \sqrt {\sum{k=1}^n\;x{k1}^2}  \sqrt {\sum{k=1}^n\;x{km}^2}$ $\quad \bigl(sin_{1m} = {A_1 \;\cdot\; A_m  \over \vert \;A_1\">
+<meta name="twitter:description" content="例如，所有用户对物品1的评分或者喜好成都表示为$A_1=(x_{11},x_{21},x_{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：     方法 公式 说明     夹角余弦 $\sin_{1m}$ =">
 
 
 
@@ -352,7 +352,8 @@
       
 
       
-        <div class="table-container">
+        <p>例如，所有用户对物品1的评分或者喜好成都表示为$A_1=(x_{11},x_{21},x_{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -364,7 +365,7 @@
 <tbody>
 <tr>
 <td>夹角余弦</td>
-<td>$\sin<em>{1m}$ = $\sum</em>{k=1}^n  \;x<em>{k1}\;\times\;x</em>{km} \over \sqrt {\sum<em>{k=1}^n\;x</em>{k1}^2}  \sqrt {\sum<em>{k=1}^n\;x</em>{km}^2}$ $\quad \bigl(sin_{1m} = {A_1 \;\cdot\; A_m  \over \vert \;A_1\;\vert \;\times\; \vert\; A_m\;\vert}\bigr)$</td>
+<td>$\sin_{1m}$ = $\sum_{k=1}^n  \;x_{k1}\;\times\;x_{km} \over \sqrt {\sum_{k=1}^n\;x_{k1}^2}  \sqrt {\sum_{k=1}^n\;x_{km}^2}$ $\quad \bigl(sin_{1m} = {A_1 \;\cdot\; A_m  \over \vert \;A_1\;\vert \;\times\; \vert\; A_m\;\vert}\bigr)$</td>
 <td style="text-align:right">取之范围为[-1,1],当余弦值接近 $\pm1$,表明两个向量有较强的相似性。当余弦值为0时，表示不相关</td>
 </tr>
 <tr>
@@ -374,7 +375,7 @@
 </tr>
 <tr>
 <td>相关系数</td>
-<td>$sin<em>{1m} ={\sum</em>{k=1}^n\;(\;x<em>{k1}\; - \;\overline {A_1}\;)  (\;x</em>{km}\; -\; \overline {A<em>M}\;) \over \sqrt {\sum</em>{k=1}^n\;(\;x<em>{k1}\; -\; \overline {A_1}\;)^2}  \sqrt {\sum</em>{k=1}^n\;(\;x_{km}\; - \;\overline {A_M}\;)^2}}$</td>
+<td>$sin_{1m} ={\sum_{k=1}^n\;(\;x_{k1}\; - \;\overline {A_1}\;)  (\;x_{km}\; -\; \overline {A_M}\;) \over \sqrt {\sum_{k=1}^n\;(\;x_{k1}\; -\; \overline {A_1}\;)^2}  \sqrt {\sum_{k=1}^n\;(\;x_{km}\; - \;\overline {A_M}\;)^2}}$</td>
 <td style="text-align:right">相关系数的取值范围是[-1,1]。相关系数的绝对值越大，则表明两者相关度越高</td>
 </tr>
 </tbody>
