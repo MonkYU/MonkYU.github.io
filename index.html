@@ -355,104 +355,16 @@
 
       
         
-          
-            <h4 id="灰色预测法"><a href="#灰色预测法" class="headerlink" title="灰色预测法"></a>灰色预测法</h4><ul>
-<li>灰色预测法是一种对含有不确定因素的系统进行预测的方法。灰色系统是介于白色系统和黑色系统之间的一种系统。</li>
-<li>白色系统是指一个系统的内部特征是完全已知的，即系统的信息是完全充分的。而黑色系统是指一个系统的内部信息对外界来说是一无所知的，只能通过它与外界的联系来加以观测研究。灰色系统内的一部分信息是已知的，另一部分信息时未知的，系统内各因素间具有不确定的关系。</li>
-<li>灰色预测通过鉴别系统因素之间发展趋势的相异程度，即进行关联分析，并对原始数据进行生成处理来寻找系统变动的规律，生成有较强规律性的数据序列，然后建立相应的微分方程模型，从而预测事物未来发展趋势的状况。其用等时距观测到的反应预测对象特征的一系列数量值构造灰色预测模型，预测未来某一时刻的特征量，或达到某一特征量的时间。</li>
-</ul>
-<h4 id="后验差检验判别参照表"><a href="#后验差检验判别参照表" class="headerlink" title="后验差检验判别参照表"></a>后验差检验判别参照表</h4><ul>
-<li>原始数据列的均值 ${\overline X}$ = ${1 \over N}\sum_{k=1}^Nx^{k}$</li>
-<li>原始数据列的方差 $S_{1}$ = ${1 \over N}\sum_{k=1}^N\bigl(x_{(k)} - \overline X\bigr)^2$</li>
-<li>残差：实际观察值与拟合值之间的差</li>
-<li>残差的均值 $\overline \varepsilon = {1 \over N}\sum_{k=1}^N{\varepsilon_{k}}$</li>
-<li>残差方差 $S_2 = {1 \over N}\sum_{k=1}^N\bigl(\varepsilon_{k} - \overline \varepsilon\bigr)^2$</li>
-<li>后验差比值 $C = {S_2 \over S_1}$</li>
-<li>小误差概率 $P = \{|\varepsilon_{k} - \overline \varepsilon| &lt; 0.6745\,S_1\}$</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>P</th>
-<th style="text-align:center">C</th>
-<th style="text-align:right">$\varepsilon$</th>
-<th style="text-align:right">模型精度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&gt;0.95</td>
-<td style="text-align:center">&lt;0.35</td>
-<td style="text-align:right">&lt;0.01</td>
-<td style="text-align:right">好</td>
-</tr>
-<tr>
-<td>&gt;0.80</td>
-<td style="text-align:center">&lt;0.50</td>
-<td style="text-align:right">&lt;0.05</td>
-<td style="text-align:right">合格</td>
-</tr>
-<tr>
-<td>&gt;0.70</td>
-<td style="text-align:center">&lt;0.65</td>
-<td style="text-align:right">&lt;0.10</td>
-<td style="text-align:right">勉强合格</td>
-</tr>
-<tr>
-<td>&lt;0.70</td>
-<td style="text-align:center">&gt;0.65</td>
-<td style="text-align:right">&gt;0.20</td>
-<td style="text-align:right">不合格</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h4 id="关于物品相似度计算的方法有："><a href="#关于物品相似度计算的方法有：" class="headerlink" title="关于物品相似度计算的方法有："></a>关于物品相似度计算的方法有：</h4><ol>
-<li>夹角余弦</li>
-<li>杰卡德相似系数</li>
-<li>相关系数等</li>
-</ol>
-<h5 id="例如，所有用户对物品1的评分或者喜好成都表示为-A-1-x-11-x-21-x-31-···x-n1-所有用户对物品M的评分或者喜好成都表示为-A-M-x-1m-x-2m-x-3m-···x-nm-其-m-为物品，-n-为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下："><a href="#例如，所有用户对物品1的评分或者喜好成都表示为-A-1-x-11-x-21-x-31-···x-n1-所有用户对物品M的评分或者喜好成都表示为-A-M-x-1m-x-2m-x-3m-···x-nm-其-m-为物品，-n-为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：" class="headerlink" title="例如，所有用户对物品1的评分或者喜好成都表示为$A_1=(x_{11},x_{21},x_{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下："></a>例如，所有用户对物品1的评分或者喜好成都表示为$A_1=(x_{11},x_{21},x_{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</h5><style>
-table th:first-of-type {
-    width: 90px;
-}
-
-table th:nth-of-type(3) {
-    width: 110px;
-}
-</style>
-
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th style="text-align:center">公式</th>
-<th style="text-align:right">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>夹角余弦</td>
-<td style="text-align:center">$\sin_{1m}$ = $\sum_{k=1}^n  \;x_{k1}\;\times\;x_{km} \over \sqrt {\sum_{k=1}^n\;x_{k1}^2}  \sqrt {\sum_{k=1}^n\;x_{km}^2}$ $\quad \bigl(sin_{1m} = {A_1 \;\cdot\; A_m  \over \vert \;A_1\;\vert \;\times\; \vert\; A_m\;\vert}\bigr)$</td>
-<td style="text-align:right">取之范围为[-1,1],当余弦值接近 $\pm1$,表明两个向量有较强的相似性。当余弦值为0时，表示不相关</td>
-</tr>
-<tr>
-<td>杰卡德相似系数</td>
-<td style="text-align:center">$J( A_1\;,\;A_M) ={\vert\; A_1\; \bigcap \;A_M\;\vert \over \vert\; A_1 \;\bigcup \;A_M\; \vert}$</td>
-<td style="text-align:right">分母$A_1 \bigcup A_M$ 表示喜欢物品1与喜欢物品M的用户总数，分子$A_1 \bigcap A_M$ 表示同时喜欢物品1和物品M的用户数</td>
-</tr>
-<tr>
-<td>相关系数</td>
-<td style="text-align:center">$sin_{1m} ={\sum_{k=1}^n\;(\;x_{k1}\; - \;\overline {A_1}\;)  (\;x_{km}\; -\; \overline {A_M}\;) \over \sqrt {\sum_{k=1}^n\;(\;x_{k1}\; -\; \overline {A_1}\;)^2}  \sqrt {\sum_{k=1}^n\;(\;x_{km}\; - \;\overline {A_M}\;)^2}}$</td>
-<td style="text-align:right">相关系数的取值范围是[-1,1]。相关系数的绝对值越大，则表明两者相关度越高</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
+          <h4 id="聚类分析算法评价"><a href="#聚类分析算法评价" class="headerlink" title="聚类分析算法评价"></a>聚类分析算法评价</h4><p>purity评价法,只需计算正确聚类数占总数的比例。$purity(X,Y) = {1\over n} {\sum_k}max|x_k \;\bigcup\; y_i|$<br>   其中，$x=(x_1,x_2,x_3,···x_k)$是聚类的集合。$x_k$表示第k个聚类的集合。$y=(y_1,y_2,y_3,···y_k)$表示需要被聚类的集合，$y_i$表示第i个聚类对象。n表示被聚类集合对象的总数。</p>
+<p>RI评价法,实际上，这是一种用排列组合原理来对聚类进行评价的手段，RI评价公式如下$RI ={R + W \over R + M + D + W}$其中，$R$是指被聚在一类的两个对象被正确分类了，$W$是指不应该被聚在一类的两个对象被正确分开了，$M$指不应该放在一类的对象被错误的放在了一类，$D$指不应该分开的对象被错误的分开了。</p>
+<p>F值评价法,这是基于上述RI方法衍生出的一个方法，F评价公式如下。$F_\alpha={(1+\alpha^2)pr \over \alpha^2p + r}$其中，$p={R \over R + M},$ $r={R \over R + D}$实际上，$RI$方法就是把准确率$p$和召回率$r$看得同等重要，事实上，若需要某一特性多一点，就适合使用F值方法。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/02/categories/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
