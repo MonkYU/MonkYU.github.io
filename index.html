@@ -358,7 +358,8 @@
           
           Apriori算法经典的挖掘频繁项集的算法,进行关联规则提取，通过连接产生后选项与其支持度，然后通过剪枝生成频繁项集
 
-$Support(A \Rightarrow B)={A,B同时发生的事务个数 \over 所有事务个数}$=$Support_count(A \; \bigcap \; B) \
+$Support(A \Rightarrow B)={A,B同时发生的事务个数 \over 所有事务个数}$=$Support_count(A \; \bigcap \; B) \over Total_count(A)$
+$Confidence(A \Rightarrow B)={Support(A \;\bigcap \; B) \over Support(A)}$ = $Support_count(A\; \bigcap \; B) \over Support_count
           ...
           <!--noindex-->
           <div class="post-button text-center">
