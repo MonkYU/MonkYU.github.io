@@ -356,13 +356,60 @@
       
         
           
-          Apriori算法经典的挖掘频繁项集的算法,进行关联规则提取，通过连接产生后选项与其支持度，然后通过剪枝生成频繁项集
+          数据预处理td{  word-wrap:break-word;  word-break: break-all;}
 
-$Support(A \Rightarrow B)={A,B_{同时发生的事务个数} \over 所有事务个数}\quad$=    $\quad Support_{count}\quad (A \; \bigcap \; B) \over Total_{count}\quad(A)$
-$Confidence(A \Rightarrow B)={Support(A \;\bigcap \; B) \over Support(A)} \quad$ =  $\quad Support_{count}\quad(A\; \bigcap \; B) \over Support_{count}\quad(A)$
+缺失值处理
 
-聚类分析算法评价
-$purity$评价法,只需计算正确聚类数占总数的比例。$purity(X,Y) = {1\over n} {\sum_k}max|x_k \;\bi
+
+
+插补方法
+方法描述
+
+
+
+
+均值/中位数/众数插补
+根据属性值的类型，用该属性取值的平均数/中位数/众数进行插补
+
+
+使用固定值
+将缺失的属性值用一个常量替换
+
+
+最近临插补
+在记录中找到与缺失样本最接近的样本的该属性值插补
+
+
+回归方法
+对带有缺失值的变量，根据已有数据和与其有关的其他变量（因变量）的数据建立拟合模型来预测缺失的属性值
+
+
+插值法
+插值法是利用已知点建立合适的插值函数$f(x)$，未知值由对应点$x_i$求出的函数值$f(x_i)近似代替$,如拉格朗日插值法，牛顿插值法，Hermite插值，分段插值，样条插值法等
+
+
+
+
+异常值处理
+
+
+
+异常值处理方法
+方法描述
+
+
+
+
+删除含有异常值的记录
+直接将含有异常值的记录删除
+
+
+视为缺失值
+将异常值视为缺失值，利用缺失值处理的方法进行处理
+
+
+平均值修正
+可用前后两个观测值的平均值修正该异常
           ...
           <!--noindex-->
           <div class="post-button text-center">

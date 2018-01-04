@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Apriori算法经典的挖掘频繁项集的算法,进行关联规则提取，通过连接产生后选项与其支持度，然后通过剪枝生成频繁项集  $Support(A \Rightarrow B)={A,B_{同时发生的事务个数} \over 所有事务个数}\quad$=    $\quad Support_{count}\quad (A \; \bigcap \; B) \over Total_{count}\quad(">
+<meta name="description" content="数据预处理td{  word-wrap:break-word;  word-break: break-all;}  缺失值处理    插补方法 方法描述     均值/中位数/众数插补 根据属性值的类型，用该属性取值的平均数/中位数/众数进行插补   使用固定值 将缺失的属性值用一个常量替换   最近临插补 在记录中找到与缺失样本最接近的样本的该属性值插补   回归方法 对带有缺失值的变量，根据已">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python数据分析与挖掘实战—读书笔记">
 <meta property="og:url" content="http://yoursite.com/2018/01/02/categories/index.html">
 <meta property="og:site_name" content="小风">
-<meta property="og:description" content="Apriori算法经典的挖掘频繁项集的算法,进行关联规则提取，通过连接产生后选项与其支持度，然后通过剪枝生成频繁项集  $Support(A \Rightarrow B)={A,B_{同时发生的事务个数} \over 所有事务个数}\quad$=    $\quad Support_{count}\quad (A \; \bigcap \; B) \over Total_{count}\quad(">
+<meta property="og:description" content="数据预处理td{  word-wrap:break-word;  word-break: break-all;}  缺失值处理    插补方法 方法描述     均值/中位数/众数插补 根据属性值的类型，用该属性取值的平均数/中位数/众数进行插补   使用固定值 将缺失的属性值用一个常量替换   最近临插补 在记录中找到与缺失样本最接近的样本的该属性值插补   回归方法 对带有缺失值的变量，根据已">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-03T12:04:51.915Z">
+<meta property="og:updated_time" content="2018-01-04T04:47:13.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python数据分析与挖掘实战—读书笔记">
-<meta name="twitter:description" content="Apriori算法经典的挖掘频繁项集的算法,进行关联规则提取，通过连接产生后选项与其支持度，然后通过剪枝生成频繁项集  $Support(A \Rightarrow B)={A,B_{同时发生的事务个数} \over 所有事务个数}\quad$=    $\quad Support_{count}\quad (A \; \bigcap \; B) \over Total_{count}\quad(">
+<meta name="twitter:description" content="数据预处理td{  word-wrap:break-word;  word-break: break-all;}  缺失值处理    插补方法 方法描述     均值/中位数/众数插补 根据属性值的类型，用该属性取值的平均数/中位数/众数进行插补   使用固定值 将缺失的属性值用一个常量替换   最近临插补 在记录中找到与缺失样本最接近的样本的该属性值插补   回归方法 对带有缺失值的变量，根据已">
 
 
 
@@ -352,7 +352,189 @@
       
 
       
-        <h4 id="Apriori算法"><a href="#Apriori算法" class="headerlink" title="Apriori算法"></a>Apriori算法</h4><p>经典的挖掘频繁项集的算法,进行关联规则提取，通过连接产生后选项与其支持度，然后通过剪枝生成频繁项集</p>
+        <h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p><style><br>td<br>{<br>  word-wrap:break-word;<br>  word-break: break-all;<br>}
+</style></p>
+<h4 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>插补方法</th>
+<th style="text-align:center">方法描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>均值/中位数/众数插补</td>
+<td style="text-align:center">根据属性值的类型，用该属性取值的平均数/中位数/众数进行插补</td>
+</tr>
+<tr>
+<td>使用固定值</td>
+<td style="text-align:center">将缺失的属性值用一个常量替换</td>
+</tr>
+<tr>
+<td>最近临插补</td>
+<td style="text-align:center">在记录中找到与缺失样本最接近的样本的该属性值插补</td>
+</tr>
+<tr>
+<td>回归方法</td>
+<td style="text-align:center">对带有缺失值的变量，根据已有数据和与其有关的其他变量（因变量）的数据建立拟合模型来预测缺失的属性值</td>
+</tr>
+<tr>
+<td>插值法</td>
+<td style="text-align:center">插值法是利用已知点建立合适的插值函数$f(x)$，未知值由对应点$x_i$求出的函数值$f(x_i)近似代替$,如拉格朗日插值法，牛顿插值法，Hermite插值，分段插值，样条插值法等</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="异常值处理"><a href="#异常值处理" class="headerlink" title="异常值处理"></a>异常值处理</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>异常值处理方法</th>
+<th style="text-align:center">方法描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>删除含有异常值的记录</td>
+<td style="text-align:center">直接将含有异常值的记录删除</td>
+</tr>
+<tr>
+<td>视为缺失值</td>
+<td style="text-align:center">将异常值视为缺失值，利用缺失值处理的方法进行处理</td>
+</tr>
+<tr>
+<td>平均值修正</td>
+<td style="text-align:center">可用前后两个观测值的平均值修正该异常值</td>
+</tr>
+<tr>
+<td>不处理</td>
+<td style="text-align:center">直接在具有异常值的数据集上进行挖掘建模</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="规范化"><a href="#规范化" class="headerlink" title="规范化"></a>规范化</h4><ol>
+<li><p>最大-最小规范化，也称离差标准化，将数值映射到[0,1]之间，消除量纲和数据取值范围影像的最简单方法</p>
+<p>$x^* = {x - min \over max - min}$</p>
+</li>
+</ol>
+<ol>
+<li><p>零-均值规范化：经过处理的数据的均值为0，标准差为1</p>
+<p>$x^* = {x - \overline x \over \sigma}$</p>
+</li>
+<li><p>小数定标规范化：将属性值映射到[-1,1]之间，移动的小数位数取决于属性值绝对值的最大值</p>
+<p>$x^* = {x \over 10^k}$</p>
+</li>
+</ol>
+<h4 id="连续属性离散化"><a href="#连续属性离散化" class="headerlink" title="连续属性离散化"></a>连续属性离散化</h4><ol>
+<li>等宽法</li>
+<li>等频法</li>
+<li>基于聚类分析的方法</li>
+</ol>
+<h4 id="属性规约"><a href="#属性规约" class="headerlink" title="属性规约"></a>属性规约</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>属性规约方法</th>
+<th style="text-align:center">方法描述</th>
+<th style="text-align:center">方法解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>合并属性</td>
+<td style="text-align:center">将一些旧属性合为新属性</td>
+<td style="text-align:center">初始属性集:$\{A_1,A_2,A_3,B_1,B_2,C\}$,$\{A_1,A_2,A_3\}\rightarrow A$,$\{B_1,B_2\} \rightarrow B$, $\Rightarrow 规约后属性集：\{A,B,C\}$</td>
+</tr>
+<tr>
+<td>逐步向前选择</td>
+<td style="text-align:center">从一个空属性集开始，每次从原来属性集合中选择一个当前最优的属性添加到当前属性子集中。直到无法选择出最优属性或满足一定阈值约束为止</td>
+<td style="text-align:center">初始属性集：$\{A_1,A_2,A_3,A_4,A_5,A_6\}$ $\{\} \Rightarrow$ $\{A_1\} \Rightarrow$ $\{A_1,A_4\} \Rightarrow$ 规约后属性集：$\{A_1,A_4,A_6\}$</td>
+</tr>
+<tr>
+<td>逐步向后删除</td>
+<td style="text-align:center">从一个全属性集开始，每次从当前属性子集中选择一个当前最差的属性并将q器从当前属性子集中消去。直到无法选择出最差属性为止或满足一定阈值约束为止</td>
+<td style="text-align:center">初始属性集：$\{A_1,A_2,A_3,A_4,A_5,A_6\}$ $\Rightarrow$ $\{A_1,A_3,A_4,A_5\} \Rightarrow$ $\{A_1,A_4\} \Rightarrow$ 规约后属性集：$\{A_1\}$</td>
+</tr>
+<tr>
+<td>决策树归纳</td>
+<td style="text-align:center">利用决策树的归纳方法对初始数据进行分类归纳学习，获得一个初始决策树，所有没有出现在决策树上的属性，均可认为是无关属性</td>
+</tr>
+<tr>
+<td>主成分分析</td>
+<td style="text-align:center">用较少的变量去解释原始数据中的大部分变量，即将许多相关性很高的变量转化成彼此相互独立或不相关的变量</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="分类与预测"><a href="#分类与预测" class="headerlink" title="分类与预测"></a>分类与预测</h3><h4 id="常用的分类与预测算法"><a href="#常用的分类与预测算法" class="headerlink" title="常用的分类与预测算法"></a>常用的分类与预测算法</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>算法名称</th>
+<th style="text-align:center">算法描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>回归分析</td>
+<td style="text-align:center">回归分析是确定预测属性（数值型）与其他变量间相互依赖的定量关系最常用的统计学方法。包括线性回归，非线性回归，Logistic回归，岭回归，主成分回归，偏最小二乘回归等模型</td>
+</tr>
+<tr>
+<td>决策树</td>
+<td style="text-align:center">决策树采用自顶向下的递归方式，在内部节点进行属性值的比较，并根据不同的属性值从该节点向下分之，最终得到的叶节点是学习划分的类</td>
+</tr>
+<tr>
+<td>人工神经网络</td>
+<td style="text-align:center">人工神经网络是一种模仿大脑神经网络结构和功能而建立的信息处理系统，表示神经网络的输入与输出变量之间关系的模型</td>
+</tr>
+<tr>
+<td>贝叶斯网络</td>
+<td style="text-align:center">贝叶斯网络又称信度网络，是Bayes方法的扩展，是目前不确定知识表达和推理领域最有效的理论模型之一</td>
+</tr>
+<tr>
+<td>支持向量机SVM</td>
+<td style="text-align:center">SVM是一种通过某种非线性映射，把低维的非线性可分转化为高维的线性可分，在高维空间进行线性分析的算法</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="分类与预测算法评价"><a href="#分类与预测算法评价" class="headerlink" title="分类与预测算法评价"></a>分类与预测算法评价</h4><ol>
+<li><p>绝对误差与相对误差： 设Y表示实际值，$\hat Y$表示预测值</p>
+<p>E = Y - $\hat Y$</p>
+<p>e = $Y - \hat Y \over Y$</p>
+</li>
+<li><p>平均绝对误差 MAE</p>
+<p>MAE = ${1\over n}\sum_{i=1}^n|E_i| = {1\over n} \sum_{i=1}^n|Y_i - \hat Y_i|$</p>
+</li>
+<li><p>均方误差 MSE</p>
+<p>MSE = ${1\over n}\sum_{i=1}^nE_i^2 = {1\over n} \sum_{i=1}^n(Y_i - \hat Y_i)^2$</p>
+</li>
+<li><p>均方根误差 RMSE</p>
+<p>RMSE = $\sqrt {MSE}$</p>
+</li>
+<li><p>平均绝对百分误差 MAPE</p>
+<p>MAPE = ${1\over n}\sum_{i=1}^n|{E_i \over Y_i}| = {1\over n} \sum_{i=1}^n|{Y_i - \hat Y_i \over Y_i}|$</p>
+</li>
+<li><p>识别准确度</p>
+<p>$Accuracy = {TP + FN \over TP + TN + FP + FN}$</p>
+<p><kbd>TP:正确的肯定表示正确肯定的分类数</kbd></p>
+<p><kbd>TN:正确的否定表示正确否定的分类数</kbd></p>
+<p><kbd>FP:错误的肯定表示错误肯定的分类数</kbd></p>
+<p><kbd>FN:错误的否定表示错误否定的分类数</kbd></p>
+</li>
+<li><p>识别准确率</p>
+<p>$Precision = {TP \over TP + FP} \times 100\%$</p>
+</li>
+<li><p>召回率</p>
+<p>$Recall = {TP \over TP + TN}\times 100\%$</p>
+</li>
+<li><p>ROC曲线</p>
+<p>将灵敏度设在纵轴，1-特异性设在横轴，可得出ROC曲线图。曲线下的积分面积大小与每种方法优劣密切相关，反应分类器正确分类的统计概率，其值越接近1说明该算法效果越好</p>
+</li>
+</ol>
+<h4 id="Apriori算法"><a href="#Apriori算法" class="headerlink" title="Apriori算法"></a>Apriori算法</h4><p>经典的挖掘频繁项集的算法,进行关联规则提取，通过连接产生后选项与其支持度，然后通过剪枝生成频繁项集</p>
 <ul>
 <li>$Support(A \Rightarrow B)={A,B_{同时发生的事务个数} \over 所有事务个数}\quad$=    $\quad Support_{count}\quad (A \; \bigcap \; B) \over Total_{count}\quad(A)$</li>
 <li>$Confidence(A \Rightarrow B)={Support(A \;\bigcap \; B) \over Support(A)} \quad$ =  $\quad Support_{count}\quad(A\; \bigcap \; B) \over Support_{count}\quad(A)$</li>
@@ -362,7 +544,7 @@
 <li>$RI$评价法,这是一种用排列组合原理来对聚类进行评价的手段，RI评价公式如下$RI ={R + W \over R + M + D + W}$其中，$R$是指被聚在一类的两个对象被正确分类了，$W$是指不应该被聚在一类的两个对象被正确分开了，$M$指不应该放在一类的对象被错误的放在了一类，$D$指不应该分开的对象被错误的分开了。</li>
 <li>$F$值评价法,这是基于上述RI方法衍生出的一个方法，F评价公式如下。$F_\alpha={(1+\alpha^2)pr \over \alpha^2p + r}$其中，$p={R \over R + M},$ $r={R \over R + D}$实际上，$RI$方法就是把准确率$p$和召回率$r$看得同等重要，事实上，若需要某一特性多一点，就适合使用F值方法。</li>
 </ul>
-<h6 id="灰色预测法是一种对含有不确定因素的系统进行预测的方法。"><a href="#灰色预测法是一种对含有不确定因素的系统进行预测的方法。" class="headerlink" title="灰色预测法是一种对含有不确定因素的系统进行预测的方法。"></a>灰色预测法是一种对含有不确定因素的系统进行预测的方法。</h6><ul>
+<h5 id="灰色预测法是一种对含有不确定因素的系统进行预测的方法。"><a href="#灰色预测法是一种对含有不确定因素的系统进行预测的方法。" class="headerlink" title="灰色预测法是一种对含有不确定因素的系统进行预测的方法。"></a>灰色预测法是一种对含有不确定因素的系统进行预测的方法。</h5><ul>
 <li>白色系统是指一个系统的内部特征是完全已知的，即系统的信息是完全充分的。</li>
 <li>而黑色系统是指一个系统的内部信息对外界来说是一无所知的，只能通过它与外界的联系来加以观测研究。</li>
 <li>灰色系统内的一部分信息是已知的，另一部分信息时未知的，系统内各因素间具有不确定的关系。<br>灰色预测通过鉴别系统因素之间发展趋势的相异程度，即进行关联分析，并对原始数据进行生成处理来寻找系统变动的规律，生成有较强规律性的数据序列，然后建立相应的微分方程模型，从而预测事物未来发展趋势的状况。其用等时距观测到的反应预测对象特征的一系列数量值构造灰色预测模型，预测未来某一时刻的特征量，或达到某一特征量的时间。</li>
@@ -420,22 +602,10 @@
 <ol>
 <li>夹角余弦</li>
 <li>杰卡德相似系数</li>
-<li>相关系数等</li>
+<li><p>相关系数 <code>在二元变量的相关分析过程中，常用的有Pearson相关系数,Spearman秩相关系数和判定系数</code></p>
+<p> 例如，所有用户对物品1的评分或者喜好成都表示为$A_1=(x_{11},x_{21},x_{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</p>
+</li>
 </ol>
-<ul>
-<li>例如，所有用户对物品1的评分或者喜好成都表示为$A_1=(x_{11},x_{21},x_{31}···x_{n1})$,所有用户对物品M的评分或者喜好成都表示为$A_M=(x_{1m},x_{2m},x_{3m}···x_{nm})$,其$m$为物品，$n$为用户数。可以采用上述几种方法计算两个物品之间的相似度。公式如下：</li>
-</ul>
-<style>
-table th:first-of-type {
-    width: 70px;
-}
-
-table th:th:nth-of-type(3) {
-    width: 80px;
-}
-
-</style>
-
 <div class="table-container">
 <table>
 <thead>
@@ -457,13 +627,37 @@ table th:th:nth-of-type(3) {
 <td style="text-align:right">分母$A_1 \bigcup A_M$ 表示喜欢物品1与喜欢物品M的用户总数，分子$A_1 \bigcap A_M$ 表示同时喜欢物品1和物品M的用户数</td>
 </tr>
 <tr>
-<td>相关系数</td>
-<td>$sin_{1m} ={\sum_{k=1}^n\;(\;x_{k1}\; - \;\overline {A_1}\;)  (\;x_{km}\; -\; \overline {A_M}\;) \over \sqrt {\sum_{k=1}^n\;(\;x_{k1}\; -\; \overline {A_1}\;)^2}  \sqrt {\sum_{k=1}^n\;(\;x_{km}\; - \;\overline {A_M}\;)^2}}$</td>
+<td>相关系数 Pearson</td>
+<td>$r ={\sum_{k=1}^n\;(\;x_{k1}\; - \;\overline {A_1}\;)  (\;x_{km}\; -\; \overline {A_M}\;) \over \sqrt {\sum_{k=1}^n\;(\;x_{k1}\; -\; \overline {A_1}\;)^2}  \sqrt {\sum_{k=1}^n\;(\;x_{km}\; - \;\overline {A_M}\;)^2}}$</td>
 <td style="text-align:right">相关系数的取值范围是[-1,1]。相关系数的绝对值越大，则表明两者相关度越高</td>
 </tr>
 </tbody>
 </table>
 </div>
+<ol>
+<li><p>Pearson相关系数<kbd>一般用于分析两个连续性变量之间的关系，计算公式如下.</kbd></p>
+<p>相关系数r的取值范围: $-1 \le r \le 1$</p>
+<p>  <kbd>r&gt;0，为正相关，r&lt;0为负相关</kbd></p>
+<p>  <kbd>|r| = 0表示不存在线性关系</kbd></p>
+<p>  <kbd>|r| = 1表示完全线性相关</kbd></p>
+<p>$0 \lt |r| \lt 1$表示存在不同程度线性相关</p>
+<p> <kbd>$|r| \le 0.3$为不存在线性相关</kbd></p>
+<p> <kbd>$0.3 \lt |r| \le 0.5$为低度线性相关</kbd></p>
+<p> <kbd>$0.5 \lt |r| \le 0.8$为显著线性相关</kbd></p>
+<p> <kbd>$|r| \gt 0.8$为高度线性相关</kbd></p>
+</li>
+</ol>
+<ol>
+<li><p>Spearman秩相关系数</p>
+<p>Pearson线性相关系数要求连续变量的取值服从正太分布。不服从正太分布的变量，分类或等级变量之间的关联性可采用Spearman秩相关系数，也称等级相关系数来描述</p>
+<p>公式如下:</p>
+<p>$r_s=1 - {6\sum_{i=1}^n(R_i - Q_i)^2 \over n(n^2 -1)}$</p>
+<p>对两个变量成对的取值分别按照从小到大（或者从大到小）顺序编秩，$R_i代表x_i的秩次，Q_i代表y_i的秩次，R_i - Q_i为x_i,y_i的秩次之差$</p>
+</li>
+<li><p>判定系数</p>
+<p>判定系数是相关系数的平方，用$r^2$表示；用来衡量回归方程对y的解释程度。判定系数取值范围$0 \le r^2 \le 1$。$r^2$越接近于1，表明$x与y$之间的相关性越强;$r^2$越接近于0,表明两个变量之间几乎没有直线相关关系</p>
+</li>
+</ol>
 
       
     </div>
@@ -603,7 +797,7 @@ table th:th:nth-of-type(3) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Apriori算法"><span class="nav-number">1.</span> <span class="nav-text">Apriori算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#聚类分析算法评价"><span class="nav-number">2.</span> <span class="nav-text">聚类分析算法评价</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#灰色预测法是一种对含有不确定因素的系统进行预测的方法。"><span class="nav-number">2.0.1.</span> <span class="nav-text">灰色预测法是一种对含有不确定因素的系统进行预测的方法。</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">1.</span> <span class="nav-text">数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#缺失值处理"><span class="nav-number">1.1.</span> <span class="nav-text">缺失值处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异常值处理"><span class="nav-number">1.2.</span> <span class="nav-text">异常值处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规范化"><span class="nav-number">1.3.</span> <span class="nav-text">规范化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连续属性离散化"><span class="nav-number">1.4.</span> <span class="nav-text">连续属性离散化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性规约"><span class="nav-number">1.5.</span> <span class="nav-text">属性规约</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类与预测"><span class="nav-number">2.</span> <span class="nav-text">分类与预测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的分类与预测算法"><span class="nav-number">2.1.</span> <span class="nav-text">常用的分类与预测算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类与预测算法评价"><span class="nav-number">2.2.</span> <span class="nav-text">分类与预测算法评价</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Apriori算法"><span class="nav-number">2.3.</span> <span class="nav-text">Apriori算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#聚类分析算法评价"><span class="nav-number">2.4.</span> <span class="nav-text">聚类分析算法评价</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#灰色预测法是一种对含有不确定因素的系统进行预测的方法。"><span class="nav-number">2.4.1.</span> <span class="nav-text">灰色预测法是一种对含有不确定因素的系统进行预测的方法。</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
