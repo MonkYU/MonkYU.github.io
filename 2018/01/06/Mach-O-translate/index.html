@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="像风一样自由">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小风">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="构建Mach-O 文件  为了创建一个程序，开发者将源码转化成目标文件，接着目标文件被打包进可执行代码中或者静态库中。OS X包含一个可将源码转化成，在一个或者多个应用程序可使用的，正在运行的应用程序或共享库的工具 这篇文章描述了Mac应用程序是如何被构建的，并且在深层次讨论，你可以构建的程序的类型。它描述了Mach-O文件构建过程中所设计到的工具，解释了你可以构建的Mach-O文件的类型，并且讨">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mach-O 翻译文档">
+<meta property="og:url" content="http://yoursite.com/2018/01/06/Mach-O-translate/index.html">
 <meta property="og:site_name" content="小风">
-<meta property="og:description" content="像风一样自由">
+<meta property="og:description" content="构建Mach-O 文件  为了创建一个程序，开发者将源码转化成目标文件，接着目标文件被打包进可执行代码中或者静态库中。OS X包含一个可将源码转化成，在一个或者多个应用程序可使用的，正在运行的应用程序或共享库的工具 这篇文章描述了Mac应用程序是如何被构建的，并且在深层次讨论，你可以构建的程序的类型。它描述了Mach-O文件构建过程中所设计到的工具，解释了你可以构建的Mach-O文件的类型，并且讨">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-06T03:04:57.786Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小风">
-<meta name="twitter:description" content="像风一样自由">
+<meta name="twitter:title" content="Mach-O 翻译文档">
+<meta name="twitter:description" content="构建Mach-O 文件  为了创建一个程序，开发者将源码转化成目标文件，接着目标文件被打包进可执行代码中或者静态库中。OS X包含一个可将源码转化成，在一个或者多个应用程序可使用的，正在运行的应用程序或共享库的工具 这篇文章描述了Mac应用程序是如何被构建的，并且在深层次讨论，你可以构建的程序的类型。它描述了Mach-O文件构建过程中所设计到的工具，解释了你可以构建的Mach-O文件的类型，并且讨">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/06/Mach-O-translate/"/>
 
 
 
 
 
-  <title>小风</title>
+  <title>Mach-O 翻译文档 | 小风</title>
   
 
 
@@ -143,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,9 +237,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -269,9 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/06/Mach-O-translate/" itemprop="url">Mach-O 翻译文档</a></h1>
+          <h1 class="post-title" itemprop="name headline">Mach-O 翻译文档</h1>
         
 
         <div class="post-meta">
@@ -354,29 +352,61 @@
       
 
       
-        
-          
-          构建Mach-O 文件
-
-为了创建一个程序，开发者将源码转化成目标文件，接着目标文件被打包进可执行代码中或者静态库中。OS X包含一个可将源码转化成，在一个或者多个应用程序可使用的，正在运行的应用程序或共享库的工具
-这篇文章描述了Mac应用程序是如何被构建的，并且在深层次讨论，你可以构建的程序的类型。它描述了Mach-O文件构建过程中所设计到的工具，解释了你可以构建的Mach-O文件的类型，并且讨论了模块-即在OS X运行时环境下，代码和数据中，最小的可链接单元。它还描述了静态归档库—包含一组已打包的模块
-
-
-工具 - 构建和运行Mach-O文件
-为了完成在运行时实际加载和绑定的工作，内核使用动态链接器（一个被特殊标记的动态共享库，位于/usr/lib/dyld）。内核加载程序，同时在一个新的进程启动动态链接器并执行他们
-在此文档中，将抽象的讨论如下工具：
-
-编译器是一个可将高级语言中的源码转化为包含机器码和数据的中间目标文件。除非特殊指定，此书将机器语言汇编程序器视为编译器
-静态链接器
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/06/Mach-O-translate/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="构建Mach-O-文件"><a href="#构建Mach-O-文件" class="headerlink" title="构建Mach-O 文件"></a>构建Mach-O 文件</h1><blockquote>
+<ul>
+<li>为了创建一个程序，开发者将源码转化成目标文件，接着目标文件被打包进可执行代码中或者静态库中。OS X包含一个可将源码转化成，在一个或者多个应用程序可使用的，正在运行的应用程序或共享库的工具</li>
+<li>这篇文章描述了Mac应用程序是如何被构建的，并且在深层次讨论，你可以构建的程序的类型。它描述了Mach-O文件构建过程中所设计到的工具，解释了你可以构建的Mach-O文件的类型，并且讨论了模块-即在OS X运行时环境下，代码和数据中，最小的可链接单元。它还描述了静态归档库—包含一组已打包的模块</li>
+</ul>
+</blockquote>
+<h1 id="工具-构建和运行Mach-O文件"><a href="#工具-构建和运行Mach-O文件" class="headerlink" title="工具 - 构建和运行Mach-O文件"></a>工具 - 构建和运行Mach-O文件</h1><blockquote>
+<p>为了完成在运行时实际加载和绑定的工作，内核使用动态链接器（一个被特殊标记的动态共享库，位于/usr/lib/dyld）。内核加载程序，同时在一个新的进程启动动态链接器并执行他们</p>
+<p>在此文档中，将抽象的讨论如下工具：</p>
+<ul>
+<li>编译器是一个可将高级语言中的源码转化为包含机器码和数据的中间目标文件。除非特殊指定，此书将机器语言汇编程序器视为编译器</li>
+<li>静态链接器是一个链接所有中间目标文件到最终产品的工具</li>
+</ul>
+<p>Xcode Tools CD 包含几个命令行工具（本文档中统称为标准工具）用来构建和分析你的应用程序，它们是编译器，还有标准静态链接器ld。无论你是使用Xcode程序，标准命令行工具，或是第三方工具来开发你的应用程序，理解每一个工具的所扮演的角色，可以帮助你深入理解Mach-O运行时架构，并且帮助你更容易的与其他OS X开发者沟通。标准工具包括如下</p>
+<ol>
+<li>编译驱动程序，位于/usr/bin/gcc，包含对C,C++,OC源代码的编译，汇编和链接模块的支持。编译驱动程序调用一些其他工具来实际完成编译，汇编和静态链接的功能。通常来讲，每一种语言的实际编译器工具被编译器驱动程序所隐藏；他们的作用是将源代码转化成汇编语言，以便放入汇编程序中。</li>
+<li>C++编译驱动器，/usr/bin/c++，像/usr/bin/cc 区别在于自动链接C++运行时函数到输出文件中（支持异常处理，运行时类型和其他高级语言特性）</li>
+<li>汇编程序，/usr/bin/as，从汇编语言代码中生成中间目标文件。它主要供编译驱动器使用，编译器驱动程序为其提供由实际编译器生成的汇编语言源代码</li>
+<li>静态链接器，/usr/bin/ld，由编译器驱动程序使用（作为一个独立的工具）来组合Mach-O可执行文件。你可以使用静态链接器去静态或者动态的绑定程序。静态绑定程序本身就是完整的系统；除了系统调用以外，它们不能对框架或者共享库进行调用。在OS X，内核扩展是静态绑定的，而其他所有程序类型都是动态绑定的，甚至包括传统的UNIX和BSD命令行工具。所有内核之外的程序对OS X内核的调用都是共享库来进行的，并且只有动态绑定程序可以对共享库进行访问</li>
+<li>库创建工具　/usr/bin/libtool，根据已给参数，来创建静态归档库或者动态共享库。libtool取代了一个名为ranlib的较旧的工具，它与ar工具结合来创建静态库。当构建共享库时，libtool调用静态链接器</li>
+</ol>
+</blockquote>
+<p><kbd>注意:这里同样有一个GNU 工具名叫libtool，它允许便携式的源代码在不同UNIX系统上构建库。不要与OSＸ上的libtool所混淆，它们都有相似的用户，但他们没有关联，并且他们不接受想通的参数</kbd></p>
+<blockquote>
+<p>用来分析Mach-O文件的工具如下：</p>
+<ol>
+<li>/usr/bin/lipo，针对多个架构，该工具允许你创建和分析包含图像的二进制文件。这样一个文件的例子是通用二进制文件。通用二进制文件可用于基于PowerPC和基于Intel的Macintosh计算机。另一个例子是PPC/PPC64二进制文件，它可用于基于32位PowerPC和基于64位PowerPC的Macintosh 计算机</li>
+<li>文件类型显示工具，/usr/bin/file，显示文件类型。对于多体系架构文件来说，它显示了构成存档的每一个图像的类型</li>
+<li>目标文件显示工具，/usr/bin/otool,列出了Mach-O文件中特定的节和段的内容。它包括针对每一个支持的架构的符号反汇编器，并且它知道如何对许多共同的节类型内容进行格式化</li>
+<li>页分析工具 /usr/bin/agestuff，显示了构成图像的每一个逻辑页的信息，包括包含在每一页的节名和符号名。此工具不适用于包含多个架构的图像的二进制文件</li>
+<li>符号表展示工具 /usr/bin/nm，允许你查看目标文件中符号表的内容</li>
+</ol>
+</blockquote>
+<h1 id="产品-可构建的Mach-O文件类型"><a href="#产品-可构建的Mach-O文件类型" class="headerlink" title="产品-可构建的Mach-O文件类型"></a>产品-可构建的Mach-O文件类型</h1><blockquote>
+<p>在OS X中，一个典型的应用可执行代码由多个类型的多文件所生成。主要的可执行文件通常包括程序的核心逻辑，包括main函数的入口。一个程序的主要功能通常在主可执行文件代码中实现。有关详情，请参阅Executing Mach-O文件。其他包括可执行代码的文件包括:</p>
+<ul>
+<li>中间目标文件。这些文件并不是最终产物；它们是较大目标文件的基本构建块。通常来说，针对每一个输入源代码文件所生成的代码和数据，编译器生成一个中间目标文件用于输出。你可以使用静态链接器将目标文件组合成动态链接器。集成开发环境，例如XCode，通常会隐藏此级别的细节<br>动态共享库。</li>
+<li>动态共享库。这些文件包含你的应用程序动态引用的那些可重用的执行文件模块，并且它们在程序启动时被动态链接器所加载。共享库通常存储那些被许多应用所使用的大量级代码。<code>详情请看在运行时加载代码使用共享库和框架</code></li>
+<li>框架。这些是包含共享库和相关资源，如图形文件，开发者文档和应用程序接口的目录</li>
+<li>伞架。这些是它们自己会包含多个子框架的一类特殊框架。例如，Cocoa伞架中包含了例如：Application Kit（用户界面类）框架，Foundation（框架）。<code>详情请看在运行时加载代码时使用共享库和框架</code></li>
+<li>静态归档库。这些文件包含，在编译时，静态链接器可添加到你应用程序中的可重用代码模块。静态归档库通常来说包含可用于少量应用程序的非常少量的代码，或者在某些原因下，那些在共享库中很难维护的代码 <code>详情请看静态归档库</code></li>
+<li>Bundles. 这些是你的应用程序在运行时可通过动态链接函数加载的可执行文件。Bundles具有插件功能，例如用于文字处理器的文件格式导入器。在OS X中，Bundle还有另外两个相关含义:<ul>
+<li>在实际的目标文件中包含可执行代码</li>
+<li>包含目标文件和相关资源的一个目录。例如，在OS X中，应用程序被打包成bundles。而且，这些bundles在Finder中以一个单独的文件形式存在，而不是一个目录，应用程序bundles也被作为应用程序包。一个bundle也许不需要包含一个目标文件。<code>更多详情，请查阅Bundle Programming Guide</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">后一种用法比较常见。然后，除非另有说明，本文档中指的的是前者</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>内核扩展是与Bundles类似的被打包的静态绑定Mach-O文件。内核扩展被加载到内核地址空间去，因此构建时，必须与其他Mach-O文件类型不同；更多详情请查阅内核文档，内核运行时环境与用户空间运行时<code>（用户空间是指正常（而不是内核）进程的运行时环境）</code>不同，所以本文档中并不涉及。</li>
+</ul>
+<p>要想在OS X中正常运行，除了内核扩展的所有目标文件必须被动态绑定，也就是，通过代码构建允许对共享库的动态引用</p>
+<p>默认情况下，静态链接器在/System/Library/Frameworks目录下检索框架和伞框架（包含子框架的框架），并在/usr/lib中中检索共享库和静态归档库。Bundles通常位于应用程序包的资源目录。然后，你可以在链接时，指定不同位置的路径名。（对于开发而言，在运行时也是如此）</p>
+<h1 id="模块-最小的代码单元"><a href="#模块-最小的代码单元" class="headerlink" title="模块 - 最小的代码单元"></a>模块 - 最小的代码单元</h1>
       
     </div>
     
@@ -393,193 +423,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/04/code-magic/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="李泽宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小风">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/04/code-magic/" itemprop="url">代码整洁之道-读书笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-04T14:04:48+08:00">
-                2018-01-04
-              </time>
+              <a href="/2018/01/04/code-magic/" rel="next" title="代码整洁之道-读书笔记">
+                <i class="fa fa-chevron-left"></i> 代码整洁之道-读书笔记
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/01/04/code-magic/" class="leancloud_visitors" data-flag-title="代码整洁之道-读书笔记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          
-td
-{
-  word-wrap:break-word;
-  word-break: break-all;
-}
-
-
-SOLID 原则
-SRP - 单一职责原则
-OCP - 开放封闭原则
-LSP - 里氏替换原则
-ISP - 接口分离原则
-DIP - 依赖倒置原则
-
-对象和数据结构数据，对象的反对称性二分原理  过程式代码（使用数据结构的代码）便于在不改动既有数据结构的前提下添加新函数。面向对象代码便于在不改动既有函数的前提下添加新类
-  过程式代码难以添加新数据结构，因为必须修改所有函数。面向对象代码难以添加新函数，因为必须要修改所有类
-得墨忒耳律  方法不应调用由任何函数返回的对象的方法
-
-当方法返回为对象或者某类数据结构时，应该区别对待，对于数据结构，如果没有任何行为或函数，那么暴露其内部结构，也就自然
-
-数据传送对象  DTO结构，此类数据结构，为只有公共变量，没有函数的类。常见的如“Bean”结构，通常有由析构器进行赋值和取值器进行取值的私有变量
-错误处理使用异常而非返回码定义
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/04/code-magic/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -589,222 +454,11 @@ DIP - 依赖倒置原则
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/02/categories/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="李泽宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小风">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/02/categories/" itemprop="url">Python数据分析与挖掘实战—读书笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-02T12:51:41+08:00">
-                2018-01-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/01/02/categories/" class="leancloud_visitors" data-flag-title="Python数据分析与挖掘实战—读书笔记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          数据预处理td{  word-wrap:break-word;  word-break: break-all;}
-
-缺失值处理
-
-
-
-插补方法
-方法描述
-
-
-
-
-均值/中位数/众数插补
-根据属性值的类型，用该属性取值的平均数/中位数/众数进行插补
-
-
-使用固定值
-将缺失的属性值用一个常量替换
-
-
-最近临插补
-在记录中找到与缺失样本最接近的样本的该属性值插补
-
-
-回归方法
-对带有缺失值的变量，根据已有数据和与其有关的其他变量（因变量）的数据建立拟合模型来预测缺失的属性值
-
-
-插值法
-插值法是利用已知点建立合适的插值函数$f(x)$，未知值由对应点$x_i$求出的函数值$f(x_i)近似代替$,如拉格朗日插值法，牛顿插值法，Hermite插值，分段插值，样条插值法等
-
-
-
-
-异常值处理
-
-
-
-异常值处理方法
-方法描述
-
-
-
-
-删除含有异常值的记录
-直接将含有异常值的记录删除
-
-
-视为缺失值
-将异常值视为缺失值，利用缺失值处理的方法进行处理
-
-
-平均值修正
-可用前后两个观测值的平均值修正该异常
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/02/categories/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -812,6 +466,10 @@ DIP - 依赖倒置原则
 
 
           
+
+  
+
+
 
         </div>
         
@@ -832,8 +490,17 @@ DIP - 依赖倒置原则
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -884,6 +551,22 @@ DIP - 依赖倒置原则
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构建Mach-O-文件"><span class="nav-number">1.</span> <span class="nav-text">构建Mach-O 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具-构建和运行Mach-O文件"><span class="nav-number">2.</span> <span class="nav-text">工具 - 构建和运行Mach-O文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#产品-可构建的Mach-O文件类型"><span class="nav-number">3.</span> <span class="nav-text">产品-可构建的Mach-O文件类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块-最小的代码单元"><span class="nav-number">4.</span> <span class="nav-text">模块 - 最小的代码单元</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1017,6 +700,10 @@ DIP - 依赖倒置原则
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1181,26 +868,6 @@ DIP - 依赖倒置原则
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
