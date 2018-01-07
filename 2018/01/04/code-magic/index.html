@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="小风">
 <meta property="og:description" content="td {   word-wrap:break-word;   word-break: break-all; }   SOLID 原则 SRP - 单一职责原则 OCP - 开放封闭原则 LSP - 里氏替换原则 ISP - 接口分离原则 DIP - 依赖倒置原则  对象和数据结构数据，对象的反对称性二分原理  过程式代码（使用数据结构的代码）便于在不改动既有数据结构的前提下添加新函数。面向对象代">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-06T03:23:14.364Z">
+<meta property="og:updated_time" content="2018-01-07T09:52:57.679Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码整洁之道-读书笔记">
 <meta name="twitter:description" content="td {   word-wrap:break-word;   word-break: break-all; }   SOLID 原则 SRP - 单一职责原则 OCP - 开放封闭原则 LSP - 里氏替换原则 ISP - 接口分离原则 DIP - 依赖倒置原则  对象和数据结构数据，对象的反对称性二分原理  过程式代码（使用数据结构的代码）便于在不改动既有数据结构的前提下添加新函数。面向对象代">
@@ -455,6 +455,92 @@ td
 <li>在不同平台上运行</li>
 <li>调整代码并强迫错误发生</li>
 </ul>
+<h2 id="JUnit框架"><a href="#JUnit框架" class="headerlink" title="JUnit框架"></a>JUnit框架</h2><h4 id="JUnit内幕"><a href="#JUnit内幕" class="headerlink" title="JUnit内幕"></a>JUnit内幕</h4><ul>
+<li>精简成员变量名称</li>
+<li>注意代码中隐藏的时序问题</li>
+<li>多与/多或条件判断，精简为一条可注释的函数</li>
+<li>肯定判断比否定判断更为容易理解</li>
+<li>每个函数的定义，排布在其被调用的后边，以拓扑方式排序</li>
+</ul>
+<h2 id="味道与启发"><a href="#味道与启发" class="headerlink" title="味道与启发"></a>味道与启发</h2><h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><ul>
+<li>不恰当的信息</li>
+<li>废弃的注释</li>
+<li>冗余注释</li>
+<li>糟糕的注释</li>
+<li>注释掉的代码</li>
+</ul>
+<h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><ul>
+<li>需要多步才能实现的构建</li>
+<li>需要多步才能做到的测试</li>
+</ul>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><ul>
+<li>过多的参数</li>
+<li>输出参数</li>
+<li>标识参数</li>
+<li>死函数</li>
+</ul>
+<h4 id="一般性问题"><a href="#一般性问题" class="headerlink" title="一般性问题"></a>一般性问题</h4><ul>
+<li>一个源文件中存在多种语言</li>
+<li>明显的行为未被实现</li>
+<li>不正确的边界行为</li>
+<li>忽视安全</li>
+<li>重复</li>
+<li>在错误的抽象层级上的代码</li>
+<li>基类依赖于派生类</li>
+<li>信息过多</li>
+<li>死代码</li>
+<li>垂直分割 <kbd>变量和函数应该在靠近被使用的地方定义</kbd></li>
+<li>前后不一致混淆视听 <kbd>没有用到的变量，从不调用的函数，没有信息量的注释</kbd></li>
+<li>人为耦合<kbd>例如，普通的enum不应在特殊类中包括</kbd></li>
+<li>特性依恋<kbd>类的方法只应对其所属类中的变量和函数感兴趣，不该垂直其他类中的变量和函数</kbd></li>
+<li>选择算子参数<kbd>使用多个函数，通常优于向单个函数传递某些代码来选择函数行为</kbd></li>
+<li>晦涩的意图</li>
+<li>位置错误的权责<kbd>最小惊异原则-代码应该放在读者自然而然期待它所在的地方</kbd></li>
+<li>不恰当的静态方法<kbd>如果的确需要静态函数，确保没机会打算让它有多态行为</kbd></li>
+<li>使用解释性变量<kbd>让程序可读的最有力方法之一就是将计算过程打散成在用有意义的单词命名的变量中放置的中间值</kbd></li>
+<li>函数名称应该表达其行为</li>
+<li>理解算法</li>
+<li>把逻辑依赖改为物理依赖<kbd>如果某个模块依赖于另一个模块，依赖就该是物理上的而不是逻辑上的。依赖者模块不应对被依赖者模块有假定（换言之，逻辑依赖）。它应当明确地询问后者全部信息</kbd></li>
+<li>用多态替代If/Else或者Switch/Case<kbd>‘单个switch’规则：对于给定的选择类型，不应有多于一个switch语句。在那个switch语句中的多个case，必须创建多态对象，取代系统中其他类似switch语句</kbd></li>
+<li>遵循标准约定</li>
+<li>用命名常量代替魔术数</li>
+<li>准确<kbd>明确自己为何要这么做</kbd></li>
+<li>结构甚于约定</li>
+<li>封装条件</li>
+<li>避免否定性条件</li>
+<li>函数只该做一件事</li>
+<li>掩蔽时序耦合</li>
+<li>别随意<kbd>不作为类工具的公共类，不应该放到其他类里面</kbd></li>
+<li>封装边界条件</li>
+<li>函数应该只在一个抽象层级上</li>
+<li>在较高层级放置可配置数据</li>
+<li>避免传递浏览</li>
+</ul>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><ul>
+<li>通过使用通配符避免过长的导入清单</li>
+<li>不要继承常量</li>
+<li>常量 VS 枚举</li>
+</ul>
+<h4 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h4><ul>
+<li>采用描述性名称</li>
+<li>名称应与抽象层级相符<kbd>不要取沟通实现的名称；取反应类或函数抽象层级的名称</kbd></li>
+<li>尽可能使用标准命名法</li>
+<li>无歧义的名称</li>
+<li>为较大作用范围选用较长名称</li>
+<li>避免编码</li>
+<li>名称应该说明副作用</li>
+</ul>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><ul>
+<li>测试不足</li>
+<li>使用覆盖率工具</li>
+<li>别略过小测试</li>
+<li>被忽略的测试就是对不确定事物的疑问</li>
+<li>测定边界条件</li>
+<li>全面测试相近的缺陷</li>
+<li>测试失败的模式有启发性</li>
+<li>测试覆盖率的模式有启发性</li>
+<li>测试应该快速</li>
+</ul>
 
       
     </div>
@@ -614,7 +700,7 @@ td
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SOLID-原则"><span class="nav-number">1.</span> <span class="nav-text">SOLID 原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象和数据结构"><span class="nav-number">2.</span> <span class="nav-text">对象和数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据，对象的反对称性"><span class="nav-number">2.0.1.</span> <span class="nav-text">数据，对象的反对称性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#二分原理"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">二分原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#得墨忒耳律"><span class="nav-number">2.0.2.</span> <span class="nav-text">得墨忒耳律</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据传送对象"><span class="nav-number">2.0.3.</span> <span class="nav-text">数据传送对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误处理"><span class="nav-number">3.</span> <span class="nav-text">错误处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用异常而非返回码"><span class="nav-number">3.0.1.</span> <span class="nav-text">使用异常而非返回码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义常规流程"><span class="nav-number">3.0.2.</span> <span class="nav-text">定义常规流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不要返回null值"><span class="nav-number">3.0.3.</span> <span class="nav-text">不要返回null值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边界"><span class="nav-number">4.</span> <span class="nav-text">边界</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">4.1.</span> <span class="nav-text">#</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">5.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类应该短小"><span class="nav-number">5.0.1.</span> <span class="nav-text">类应该短小</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#单一权责原则-SRP"><span class="nav-number">5.0.1.0.1.</span> <span class="nav-text">单一权责原则 SRP</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#内聚"><span class="nav-number">5.0.1.0.2.</span> <span class="nav-text">内聚</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#保持内聚性就会得到许多短小的类"><span class="nav-number">5.0.1.0.3.</span> <span class="nav-text">保持内聚性就会得到许多短小的类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为了组织而修改"><span class="nav-number">5.0.2.</span> <span class="nav-text">为了组织而修改</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#隔离修改"><span class="nav-number">5.0.2.0.1.</span> <span class="nav-text">隔离修改</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭进"><span class="nav-number">6.</span> <span class="nav-text">迭进</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过迭进设计达到整洁目的"><span class="nav-number">6.0.1.</span> <span class="nav-text">通过迭进设计达到整洁目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重构"><span class="nav-number">6.0.2.</span> <span class="nav-text">重构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不可重复"><span class="nav-number">6.0.3.</span> <span class="nav-text">不可重复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达力"><span class="nav-number">6.0.4.</span> <span class="nav-text">表达力</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发编程-对象是过程的抽象。线程是调度的抽象"><span class="nav-number">7.</span> <span class="nav-text">　并发编程 对象是过程的抽象。线程是调度的抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要并发"><span class="nav-number">7.0.1.</span> <span class="nav-text">为什么要并发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并发防御原则"><span class="nav-number">7.0.2.</span> <span class="nav-text">并发防御原则</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#单一权责原则"><span class="nav-number">7.0.2.0.1.</span> <span class="nav-text">单一权责原则</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#限制数据作用域"><span class="nav-number">7.0.2.0.2.</span> <span class="nav-text">限制数据作用域</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#使用数据副本"><span class="nav-number">7.0.2.0.3.</span> <span class="nav-text">使用数据副本</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#线程应尽可能独立"><span class="nav-number">7.0.2.0.4.</span> <span class="nav-text">线程应尽可能独立</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行模型"><span class="nav-number">7.0.3.</span> <span class="nav-text">执行模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试线程代码"><span class="nav-number">7.0.4.</span> <span class="nav-text">测试线程代码</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SOLID-原则"><span class="nav-number">1.</span> <span class="nav-text">SOLID 原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象和数据结构"><span class="nav-number">2.</span> <span class="nav-text">对象和数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据，对象的反对称性"><span class="nav-number">2.0.1.</span> <span class="nav-text">数据，对象的反对称性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#二分原理"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">二分原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#得墨忒耳律"><span class="nav-number">2.0.2.</span> <span class="nav-text">得墨忒耳律</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据传送对象"><span class="nav-number">2.0.3.</span> <span class="nav-text">数据传送对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误处理"><span class="nav-number">3.</span> <span class="nav-text">错误处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用异常而非返回码"><span class="nav-number">3.0.1.</span> <span class="nav-text">使用异常而非返回码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义常规流程"><span class="nav-number">3.0.2.</span> <span class="nav-text">定义常规流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不要返回null值"><span class="nav-number">3.0.3.</span> <span class="nav-text">不要返回null值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边界"><span class="nav-number">4.</span> <span class="nav-text">边界</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">4.1.</span> <span class="nav-text">#</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">5.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类应该短小"><span class="nav-number">5.0.1.</span> <span class="nav-text">类应该短小</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#单一权责原则-SRP"><span class="nav-number">5.0.1.0.1.</span> <span class="nav-text">单一权责原则 SRP</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#内聚"><span class="nav-number">5.0.1.0.2.</span> <span class="nav-text">内聚</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#保持内聚性就会得到许多短小的类"><span class="nav-number">5.0.1.0.3.</span> <span class="nav-text">保持内聚性就会得到许多短小的类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为了组织而修改"><span class="nav-number">5.0.2.</span> <span class="nav-text">为了组织而修改</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#隔离修改"><span class="nav-number">5.0.2.0.1.</span> <span class="nav-text">隔离修改</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭进"><span class="nav-number">6.</span> <span class="nav-text">迭进</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过迭进设计达到整洁目的"><span class="nav-number">6.0.1.</span> <span class="nav-text">通过迭进设计达到整洁目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重构"><span class="nav-number">6.0.2.</span> <span class="nav-text">重构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不可重复"><span class="nav-number">6.0.3.</span> <span class="nav-text">不可重复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达力"><span class="nav-number">6.0.4.</span> <span class="nav-text">表达力</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发编程-对象是过程的抽象。线程是调度的抽象"><span class="nav-number">7.</span> <span class="nav-text">　并发编程 对象是过程的抽象。线程是调度的抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要并发"><span class="nav-number">7.0.1.</span> <span class="nav-text">为什么要并发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并发防御原则"><span class="nav-number">7.0.2.</span> <span class="nav-text">并发防御原则</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#单一权责原则"><span class="nav-number">7.0.2.0.1.</span> <span class="nav-text">单一权责原则</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#限制数据作用域"><span class="nav-number">7.0.2.0.2.</span> <span class="nav-text">限制数据作用域</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#使用数据副本"><span class="nav-number">7.0.2.0.3.</span> <span class="nav-text">使用数据副本</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#线程应尽可能独立"><span class="nav-number">7.0.2.0.4.</span> <span class="nav-text">线程应尽可能独立</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行模型"><span class="nav-number">7.0.3.</span> <span class="nav-text">执行模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试线程代码"><span class="nav-number">7.0.4.</span> <span class="nav-text">测试线程代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JUnit框架"><span class="nav-number">8.</span> <span class="nav-text">JUnit框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JUnit内幕"><span class="nav-number">8.0.1.</span> <span class="nav-text">JUnit内幕</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#味道与启发"><span class="nav-number">9.</span> <span class="nav-text">味道与启发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">9.0.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#环境"><span class="nav-number">9.0.2.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">9.0.3.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一般性问题"><span class="nav-number">9.0.4.</span> <span class="nav-text">一般性问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java"><span class="nav-number">9.0.5.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#名称"><span class="nav-number">9.0.6.</span> <span class="nav-text">名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试"><span class="nav-number">9.0.7.</span> <span class="nav-text">测试</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
